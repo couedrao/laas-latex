@@ -1,7 +1,8 @@
 \usepackage{amsmath,amssymb}             % AMS Math
-\usepackage[french]{babel}
-\usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
 \usepackage{tabularx}
 %\usepackage{tabular}
 \usepackage{multirow}
@@ -23,7 +24,7 @@
 % Glossary / list of abbreviations
 
 \usepackage[intoc]{nomencl}
-\renewcommand{\nomname}{Liste des Abréviations}
+\renewcommand{\nomname}{Liste des AbrÃ©viations}
 
 \makenomenclature
 
@@ -49,11 +50,11 @@
 \renewcommand*{\backref}[1]{}
 \renewcommand*{\backrefalt}[4]{%
 \ifcase #1 %
-(Non cité.)%
+(Non citÃ©.)%
 \or
-(Cité en page~#2.)%
+(CitÃ© en page~#2.)%
 \else
-(Cité en pages~#2.)%
+(CitÃ© en pages~#2.)%
 \fi}
 \renewcommand*{\backrefsep}{, }
 \renewcommand*{\backreftwosep}{ et~}
@@ -70,9 +71,9 @@
 \hypersetup
 {
 bookmarksopen=true,
-pdftitle="Évaluation de la sécurité des équipements grand public connectés à Internet",
+pdftitle="Ã‰valuation de la sÃ©curitÃ© des Ã©quipements grand public connectÃ©s Ã  Internet",
 pdfauthor="Yann BACHY", %auteur du document
-pdfsubject="Thèse", %sujet du document
+pdfsubject="ThÃ¨se", %sujet du document
 %pdftoolbar=false, %barre d'outils non visible
 pdfmenubar=true, %barre de menu visible
 pdfhighlight=/O, %effet d'un clic sur un lien hypertexte
@@ -195,7 +196,7 @@ urlcolor=linkcol %couleur des liens pour les url
 	 \setlength{\itemsep}{\parsep}}}%
 { \end{list} }
 
-\newtheorem{definition}{Définition}
+\newtheorem{definition}{DÃ©finition}
 \renewcommand{\epsilon}{\varepsilon}
 
 % centered page environment
