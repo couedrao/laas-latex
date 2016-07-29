@@ -1,7 +1,11 @@
 \usepackage{amsmath,amssymb}             % AMS Math
 \usepackage[T1]{fontenc}
 \usepackage[utf8x]{inputenc}
+\iftoggle{ThesisInEnglish}{%
+\usepackage[english]{babel}
+}{ %
 \usepackage[french]{babel}
+}
 \usepackage{lmodern}
 \usepackage{tabularx}
 %\usepackage{tabular}
@@ -14,7 +18,11 @@
 % Table of contents for each chapter
 
 \usepackage[nottoc, notlof, notlot]{tocbibind}
+\iftoggle{ThesisInEnglish}{%
+\usepackage[english]{minitoc}
+}{ %
 \usepackage[french]{minitoc}
+}
 \setcounter{minitocdepth}{2}
 \mtcindent=15pt
 % Use \minitoc where to put a table of contents
@@ -24,7 +32,11 @@
 % Glossary / list of abbreviations
 
 \usepackage[intoc]{nomencl}
+\iftoggle{ThesisInEnglish}{%
+\renewcommand{\nomname}{Glossary}
+}{ %
 \renewcommand{\nomname}{Liste des Abréviations}
+}
 
 \makenomenclature
 
@@ -46,7 +58,23 @@
 
 \graphicspath{{.}{images/}}
 
-%nicer backref links
+%% nicer backref links. NOTE: The flag ThesisInEnglish is used to define the
+% language in the back references. Read more about it in These.tex
+
+\iftoggle{ThesisInEnglish}{%
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{%
+\ifcase #1 %
+(Not cited.)%
+\or
+(Cited in page~#2.)%
+\else
+(Cited in pages~#2.)%
+\fi}
+\renewcommand*{\backrefsep}{, }
+\renewcommand*{\backreftwosep}{ and~}
+\renewcommand*{\backreflastsep}{ and~}
+}{%
 \renewcommand*{\backref}[1]{}
 \renewcommand*{\backrefalt}[4]{%
 \ifcase #1 %
@@ -59,6 +87,7 @@
 \renewcommand*{\backrefsep}{, }
 \renewcommand*{\backreftwosep}{ et~}
 \renewcommand*{\backreflastsep}{ et~}
+}
 
 % Links in pdf
 \usepackage{color}

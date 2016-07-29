@@ -1,5 +1,18 @@
 \documentclass[a4paper,11pt,twoside]{StyleThese}
 \newcommand{\included}{}
+
+\usepackage{etoolbox}        % Package used to manage the language of the thesis
+\newtoggle{ThesisInEnglish}   % Variable used to define if the thesis is written in english
+
+% Select the language of your thesis by commenting out ONE of the lines below. 
+% Note1: the 'page de garde' will always be written in French, no matter the
+%        language selected below.
+% Note2: You will need to recompile twice your document (or clear the auxiliary
+%        files before compiling) if you change the language of your document
+
+%\toggletrue{ThesisInEnglish} % use this line if your thesis is written in ENGLISH
+\togglefalse{ThesisInEnglish} % use this line if your thesis is written in FRENCH
+
 \include{formatAndDefs}
 \sloppy
 \begin{document}
@@ -15,7 +28,25 @@
 
  \cleardoublepage
 
+% Here you can see an example of how to create text conditioned by the language
+% variable. The \iftoggle command:
+%
+%   \iftoggle{ThesisInEnglish}{%
+%   <your-text-in-english>
+%   }{%
+%   <your-text-in-french>
+%   }
+%
+% will compile only one of the two blocks, depending on the variable you set at
+% the beginning of this document. Language selection is managed this way in the
+% formatAndDefs.tex file. You too can create sections of your thesis that is
+% language dependend this way, although you probably won't need it. Another use
+% of \iftoggle can be found at the end of this file.
+\iftoggle{ThesisInEnglish}{%
+\section*{Acknowledgments}
+}{%
 \section*{Remerciements}
+}
 
 A faire en dernier :-) 
 
@@ -43,9 +74,17 @@ A faire en dernier :-)
 \begin{vcenterpage}
 \noindent\rule[2pt]{\textwidth}{0.5pt}
 \\
+\iftoggle{ThesisInEnglish}{%
+{\large\textbf{Abstract:}}
+}{%
 {\large\textbf{Résumé :}}
+}
 resume
+\iftoggle{ThesisInEnglish}{%
+{\large\textbf{Keywords:}}
+}{%
 {\large\textbf{Mots clés :}}
+}
 mots, clefs
 \\
 \noindent\rule[2pt]{\textwidth}{0.5pt}
