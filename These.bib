@@ -3,7 +3,10 @@
 To add a new entry chose the proper template, copy-paste it in th end of this
 file, replace the "_" by an "at-symbol" (I cannot type it here otherwise this
 file could not be processed. See an example in the end of this file), and fill
-its fields. Optional fields in the templates are commented out with a '%'.
+its fields. Optional fields in the templates are commented out with a '%'. You
+can use the month macros (jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec)
+without quotes to let the bib-style handle the language of the month (French or
+English), like in the example in the end of the file.
 
 Note that not all external programs that process bibliography information in
 .bib files support comments inside the reference entry (notably bibtex
@@ -203,6 +206,7 @@ _unpublished{Xunpublished,
 @book{goossens93,
     author    = "Michel Goossens and Frank Mittelbach and Alexander Samarin",
     title     = "The LaTeX Companion",
+    month     = dec,
     year      = "1993",
     publisher = "Addison-Wesley",
     address   = "Reading, Massachusetts",
