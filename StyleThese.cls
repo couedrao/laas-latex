@@ -55,6 +55,9 @@
 \ProvidesClass{StyleThese}
               [2004/02/16 v1.4f
  Standard LaTeX document class]
+\RequirePackage{etoolbox}
+\DeclareOption{french}{\newtoggle{ThesisInEnglish}\togglefalse{ThesisInEnglish}}
+\DeclareOption{english}{\newtoggle{ThesisInEnglish}\toggletrue{ThesisInEnglish}}
 \newcommand\@ptsize{}
 \newif\if@restonecol
 \newif\if@titlepage

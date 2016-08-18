@@ -1,17 +1,11 @@
-\documentclass[a4paper,11pt,twoside]{StyleThese}
+% Choose the language of your thesis passing 'french' or 'english' as
+% \documentclass option.
+% Note1: The 'page de garde' will always be written in French.
+% Note2: You will have an error if you change the language of the document and
+%        compile it without cleaning the auxiliary files. Compiling it again
+%        should solve the problem.
+\documentclass[french,a4paper,11pt,twoside]{StyleThese}
 \newcommand{\included}{}
-
-\usepackage{etoolbox}        % Package used to manage the language of the thesis
-\newtoggle{ThesisInEnglish}   % Variable used to define if the thesis is written in english
-
-% Select the language of your thesis by commenting out ONE of the lines below. 
-% Note1: the 'page de garde' will always be written in French, no matter the
-%        language selected below.
-% Note2: You will need to recompile twice your document (or clear the auxiliary
-%        files before compiling) if you change the language of your document
-
-%\toggletrue{ThesisInEnglish} % use this line if your thesis is written in ENGLISH
-\togglefalse{ThesisInEnglish} % use this line if your thesis is written in FRENCH
 
 \include{formatAndDefs}
 \sloppy

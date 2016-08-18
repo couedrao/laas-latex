@@ -1,11 +1,8 @@
 \usepackage{amsmath,amssymb}             % AMS Math
 \usepackage[T1]{fontenc}
 \usepackage[utf8x]{inputenc}
-\iftoggle{ThesisInEnglish}{%
-\usepackage[english]{babel}
-}{ %
-\usepackage[french]{babel}
-}
+\usepackage{babel}
+
 \usepackage{lmodern}
 \usepackage{tabularx}
 %\usepackage{tabular}
@@ -18,11 +15,7 @@
 % Table of contents for each chapter
 
 \usepackage[nottoc, notlof, notlot]{tocbibind}
-\iftoggle{ThesisInEnglish}{%
-\usepackage[english]{minitoc}
-}{ %
-\usepackage[french]{minitoc}
-}
+\usepackage{minitoc}
 \setcounter{minitocdepth}{2}
 \mtcindent=15pt
 % Use \minitoc where to put a table of contents
