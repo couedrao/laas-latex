@@ -865,30 +865,30 @@ FUNCTION {unpublished}
  
 FUNCTION {default.type} { misc }
  
-MACRO {jan} {"\iftoggle{ThesisInEnglish}{January}{Janvier}"}
+MACRO {jan} {"\monthname[1]"}
  
-MACRO {feb} {"\iftoggle{ThesisInEnglish}{February}{F\'{e}vrier}"}
+MACRO {feb} {"\monthname[2]"}
  
-MACRO {mar} {"\iftoggle{ThesisInEnglish}{March}{Mars}"}
+MACRO {mar} {"\monthname[3]"}
  
-MACRO {apr} {"\iftoggle{ThesisInEnglish}{April}{Avril}"}
+MACRO {apr} {"\monthname[4]"}
  
-MACRO {may} {"\iftoggle{ThesisInEnglish}{May}{Mai}"}
+MACRO {may} {"\monthname[5]"}
  
-MACRO {jun} {"\iftoggle{ThesisInEnglish}{June}{Juin}"}
+MACRO {jun} {"\monthname[6]"}
  
-MACRO {jul} {"\iftoggle{ThesisInEnglish}{July}{Juillet}"}
+MACRO {jul} {"\monthname[7]"}
  
-MACRO {aug} {"\iftoggle{ThesisInEnglish}{August}{Ao\^{u}t}"}
+MACRO {aug} {"\monthname[8]"}
  
-MACRO {sep} {"\iftoggle{ThesisInEnglish}{September}{Septembre}"}
+MACRO {sep} {"\monthname[9]"}
  
-MACRO {oct} {"\iftoggle{ThesisInEnglish}{October}{Octobre}"}
+MACRO {oct} {"\monthname[10]"}
  
-MACRO {nov} {"\iftoggle{ThesisInEnglish}{November}{Novembre}"}
+MACRO {nov} {"\monthname[11]"}
  
-MACRO {dec} {"\iftoggle{ThesisInEnglish}{December}{D\'{e}cembre}"}
- 
+MACRO {dec} {"\monthname[12]"}
+
 MACRO {acmcs} {"ACM Computing Surveys"}
  
 MACRO {acta} {"Acta Informatica"}
