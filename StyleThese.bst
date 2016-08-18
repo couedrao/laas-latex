@@ -225,7 +225,7 @@ FUNCTION {format.names}
 	      if$
 	      t "others" =
 		{ " et~al." emphasize * }
-		{ " et " * t * }
+		{ " \iftoggle{ThesisInEnglish}{and}{et} " * t * }
 	      if$
 	    }
 	  if$
