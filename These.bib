@@ -1,19 +1,24 @@
 ###### HOW-TO ######
 
-To add a new entry chose the proper template, copy-paste it in th end of this
-file, replace the "_" by an "at-symbol" (I cannot type it here otherwise this
-file could not be processed. See an example in the end of this file), and fill
-its fields. Optional fields in the templates are commented out with a '%'. You
-can use the month macros (jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec)
-without quotes to let the bib-style handle the language of the month (French or
-English), like in the example in the end of the file.
+To add a new entry in your bibliography chose the proper template below, copy-
+paste it in the end of this file, replace the "_" by an "at-symbol" (this
+symbol cannot be typed here otherwise the bibliography processing program
+would think there's an entry inside this how-to), and fill its fields. Check
+an proper entry example in the end of this file.
 
-Note that not all external programs that process bibliography information in
-.bib files support comments inside the reference entry (notably bibtex
-doesn't), so you may need to remove the fields you don't want/need in your
-entry instead of leaving it commented out. Moreover, anything not starting
-with a "at-symbol" is normally not processed by the bibliography processing
-program.
+You can use the month macros (jan, feb, mar, apr, may, jun, jul, aug, sep,
+oct, nov, dec) WITHOUT QUOTES to let the bib-style handle the language of the
+month (French or English), like in the example in the end of the file.
+
+Optional fields in the templates are commented out with a '%'. Note that not
+all external programs that process bibliography information in .bib files
+support comments inside the reference entry (notably bibtex doesn't), so you
+may need to remove the fields you don't want/need in your entry instead of
+leaving it commented out. Moreover, anything not starting with a "at-symbol"
+is normally not processed by the bibliography processing program (like it was
+just comments).
+
+
 
 ###### TEMPLATES ######
 
@@ -203,6 +208,8 @@ _unpublished{Xunpublished,
 
 ###### EXAMPLE ######
 
+This entry can be cited in the document using \cite{goossens93}, or other
+similar citing command.
 @book{goossens93,
     author    = "Michel Goossens and Frank Mittelbach and Alexander Samarin",
     title     = "The LaTeX Companion",
