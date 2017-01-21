@@ -56,7 +56,7 @@
               [2004/02/16 v1.4f
  Standard LaTeX document class]
 \RequirePackage{etoolbox}
-\DeclareOption{french}{\newtoggle{ThesisInEnglish}\togglefalse{ThesisInEnglish}}
+\DeclareOption{french}{\newtoggle{ThesisInEnglish}\togglefalse{ThesisInEnglish}\AtBeginEnvironment{tikzpicture}{\shorthandoff{;:!?}}}
 \DeclareOption{english}{\newtoggle{ThesisInEnglish}\toggletrue{ThesisInEnglish}}
 \newcommand\@ptsize{}
 \newif\if@restonecol
