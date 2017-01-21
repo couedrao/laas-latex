@@ -250,8 +250,8 @@ FUNCTION {format.editors}
     { "" }
     { editor format.names
       editor num.names$ #1 >
-	{ ", editeurs" * }
-	{ ", editeur" * }
+	{ ", \iftoggle{ThesisInEnglish}{editors}{editeurs}" * }
+	{ ", \iftoggle{ThesisInEnglish}{editor}{editeur}" * }
       if$
     }
   if$
@@ -347,13 +347,13 @@ FUNCTION {format.number.series}
     { number empty$
 	{ series field.or.null }
 	{ output.state mid.sentence =
-	    { "num\'ero" }
-	    { "Nume\'ero" }
+	    { "\iftoggle{ThesisInEnglish}{number}{num\'ero}" }
+	    { "\iftoggle{ThesisInEnglish}{Number}{Nume\'ero}" }
 	  if$
 	  number tie.or.space.connect
 	  series empty$
 	    { "there's a number but no series in " cite$ * warning$ }
-	    { " de " * series * }
+	    { " \iftoggle{ThesisInEnglish}{in}{de} " * series * }
 	  if$
 	}
       if$
@@ -366,8 +366,8 @@ FUNCTION {format.edition}
 { edition empty$
     { "" }
     { output.state mid.sentence =
-	{ edition "l" change.case$ " \'edition" * }
-	{ edition "t" change.case$ " \'edition" * }
+	{ edition "l" change.case$ " \iftoggle{ThesisInEnglish}{edition}{\'edition}" * }
+	{ edition "t" change.case$ " \iftoggle{ThesisInEnglish}{edition}{\'edition}" * }
       if$
     }
   if$
@@ -425,7 +425,7 @@ FUNCTION {format.chapter.pages}
 { chapter empty$
     'format.pages
     { type empty$
-	{ "chapitre" }
+	{ "\iftoggle{ThesisInEnglish}{chapter}{chapitre}" }
 	{ type "l" change.case$ }
       if$
       chapter tie.or.space.connect
@@ -441,8 +441,8 @@ FUNCTION {format.in.ed.booktitle}
 { booktitle empty$
     { "" }
     { editor empty$
-	{ "In " booktitle * }
-	{ "In " format.editors * ", " * booktitle * }
+	{ "\iftoggle{ThesisInEnglish}{In}{Dans} " booktitle * }
+	{ "\iftoggle{ThesisInEnglish}{In}{Dans} " format.editors * ", " * booktitle * }
       if$
     }
   if$
@@ -469,7 +469,7 @@ FUNCTION {format.thesis.type}
  
 FUNCTION {format.tr.number}
 { type empty$
-    { "Rapport technique" }
+    { "\iftoggle{ThesisInEnglish}{Technical Report}{Rapport technique}" }
     'type
   if$
   number empty$
@@ -549,10 +549,10 @@ FUNCTION {format.incoll.inproc.crossref}
 	      crossref * warning$
 	      ""
 	    }
-	    { "In " key * }
+	    { "\iftoggle{ThesisInEnglish}{In}{Dans} " key * }
 	  if$
 	}
-	{ "In " booktitle * }
+	{ "\iftoggle{ThesisInEnglish}{In}{Dans} " booktitle * }
       if$
     }
     { "In " format.crossref.editor * }
